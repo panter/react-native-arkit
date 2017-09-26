@@ -24,6 +24,7 @@
 		10ED47A71F38BC01004DF043 /* DeviceMotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 10ED47A61F38BC00004DF043 /* DeviceMotion.m */; };
 		10FEF6141F774C9000EC21AE /* RCTARKitIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FEF6101F774C8F00EC21AE /* RCTARKitIO.m */; };
 		10FEF6151F774C9000EC21AE /* RCTARKitNodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FEF6121F774C9000EC21AE /* RCTARKitNodes.m */; };
+		B1D903901F7A772200B26772 /* ARLineManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D9038F1F7A772200B26772 /* ARLineManager.m */; };
 		B3E7B58A1CC2AC0600A0062D /* RCTARKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RCTARKit.m */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,8 @@
 		10FEF6121F774C9000EC21AE /* RCTARKitNodes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTARKitNodes.m; sourceTree = "<group>"; };
 		10FEF6131F774C9000EC21AE /* RCTARKitDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTARKitDelegate.h; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libRCTARKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTARKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1D9038E1F7A771800B26772 /* ARLineManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARLineManager.h; sourceTree = "<group>"; };
+		B1D9038F1F7A772200B26772 /* ARLineManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARLineManager.m; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RCTARKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTARKit.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RCTARKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTARKit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,7 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				106999E31F3EC2FB00032829 /* ARBoxManager.h */,
+				B1D9038E1F7A771800B26772 /* ARLineManager.h */,
 				106999E41F3EC2FB00032829 /* ARBoxManager.m */,
+				B1D9038F1F7A772200B26772 /* ARLineManager.m */,
 				106DA3171F443D1D00B93D36 /* ARSphereManager.h */,
 				106DA3181F443D1D00B93D36 /* ARSphereManager.m */,
 				106DA31A1F443D2A00B93D36 /* ARCylinderManager.h */,
@@ -224,6 +229,7 @@
 				B3E7B58A1CC2AC0600A0062D /* RCTARKit.m in Sources */,
 				10062C831F127572009AE974 /* RCTARKitManager.m in Sources */,
 				10ED47A71F38BC01004DF043 /* DeviceMotion.m in Sources */,
+				B1D903901F7A772200B26772 /* ARLineManager.m in Sources */,
 				100543FC1F77F85D0090A051 /* RCTARKitGeos.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

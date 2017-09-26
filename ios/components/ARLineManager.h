@@ -8,6 +8,6 @@
 
 #import <React/RCTBridgeModule.h>
 
-@interface ARBoxManager : NSObject <RCTBridgeModule>
+@interface ARLineManager : NSObject <RCTBridgeModule>
 
 @end

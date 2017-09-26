@@ -28,8 +28,10 @@
 - (void)addTorus:(NSDictionary *)property;
 - (void)addCapsule:(NSDictionary *)property;
 - (void)addPlane:(NSDictionary *)property;
+- (void)addLine:(NSDictionary *)property;
 - (void)addText:(NSDictionary *)property;
 - (void)addModel:(NSDictionary *)property;
 - (void)addImage:(NSDictionary *)property;
+
 
 @end

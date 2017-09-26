@@ -156,6 +156,47 @@
     [self.nodeManager addNodeToScene:node property:property];
 }
 
+static SCNVector3 dictToVector(NSDictionary *dict) {
+    SCNVector3  startVector = SCNVector3Make([dict[@"x"] floatValue], [dict[@"y"] floatValue], [dict[@"z"] floatValue]);
+    return startVector;
+}
+
+- (void)addLine:(NSDictionary *)property {
+    NSDictionary* shape = property[@"shape"];
+    NSDictionary* from = shape[@"from"];
+    NSDictionary* to = shape[@"to"];
+    
+    SCNVector3 fromVector = dictToVector(from);
+    
+    SCNVector3  toVector = dictToVector(to);
+    
+    
+    SCNVector3 positions[] = {
+        fromVector,
+        toVector,
+    };
+    
+    int indices[] = {0, 1};
+    
+    SCNGeometrySource *vertexSource = [SCNGeometrySource geometrySourceWithVertices:positions
+                                                                              count:2];
+    
+    NSData *indexData = [NSData dataWithBytes:indices
+                                       length:sizeof(indices)];
+    
+    SCNGeometryElement *element = [SCNGeometryElement geometryElementWithData:indexData
+                                                                primitiveType:SCNGeometryPrimitiveTypeLine
+                                                               primitiveCount:1
+                                                                bytesPerIndex:sizeof(int)];
+    
+    SCNGeometry *line = [SCNGeometry geometryWithSources:@[vertexSource]
+                                                elements:@[element]];
+    
+    SCNNode *node = [SCNNode nodeWithGeometry:line];
+    
+    
+    [self.nodeManager addNodeToScene:node property:property];
+}
 
 - (void)addText:(NSDictionary *)property {
     

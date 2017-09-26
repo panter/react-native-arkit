@@ -17,6 +17,7 @@ import ARTube from './components/ARTube';
 import ARTorus from './components/ARTorus';
 import ARCapsule from './components/ARCapsule';
 import ARPlane from './components/ARPlane';
+import ARLine from './components/ARLine';
 import ARText from './components/ARText';
 import ARModel from './components/ARModel';
 
@@ -29,6 +30,7 @@ ARKit.Tube = ARTube;
 ARKit.Torus = ARTorus;
 ARKit.Capsule = ARCapsule;
 ARKit.Plane = ARPlane;
+ARKit.Line = ARLine;
 ARKit.Text = ARText;
 ARKit.Model = ARModel;
 
@@ -44,6 +46,7 @@ module.exports = {
   ARTorus,
   ARCapsule,
   ARPlane,
+  ARLine,
   ARText,
   ARModel,
 };
