@@ -168,7 +168,7 @@ static SCNVector3 dictToVector(NSDictionary *dict) {
     
     SCNVector3 fromVector = dictToVector(from);
     
-    SCNVector3  toVector = dictToVector(to);
+    SCNVector3 toVector = dictToVector(to);
     
     
     SCNVector3 positions[] = {
@@ -191,7 +191,8 @@ static SCNVector3 dictToVector(NSDictionary *dict) {
     
     SCNGeometry *line = [SCNGeometry geometryWithSources:@[vertexSource]
                                                 elements:@[element]];
-    
+    SCNMaterial *material = [self materialFromProperty:property];
+    line.materials = @[material];
     SCNNode *node = [SCNNode nodeWithGeometry:line];
     
     
