@@ -12,7 +12,9 @@
 
 + (SCNMaterial *)SCNMaterial:(id)json {
     SCNMaterial *material = [SCNMaterial new];
-  
+    if (json[@"blendMode"]) {
+        material.blendMode = (SCNBlendMode) [json[@"blendMode"] integerValue];
+    }
     if (json[@"lightingModel"]) {
         material.lightingModelName = json[@"lightingModel"];
     }
@@ -29,6 +31,10 @@
     if (json[@"roughness"]) {
         material.lightingModelName = SCNLightingModelPhysicallyBased;
         material.roughness.contents = @([json[@"roughness"] floatValue]);
+    }
+    
+    if(json[@"shaders"] ) {
+        material.shaderModifiers = json[@"shaders"];
     }
     
     return material;

@@ -30,9 +30,17 @@ export const orientation = PropTypes.shape({
   w: PropTypes.number,
 });
 
+export const shaders = PropTypes.shape({
+  [ARKitManager.ShaderModifierEntryPoint.Geometry]: PropTypes.string,
+  [ARKitManager.ShaderModifierEntryPoint.Surface]: PropTypes.string,
+  [ARKitManager.ShaderModifierEntryPoint.LightingModel]: PropTypes.string,
+  [ARKitManager.ShaderModifierEntryPoint.Fragment]: PropTypes.string,
+});
+
 export const material = PropTypes.shape({
   color: PropTypes.string,
   metalness: PropTypes.number,
   roughness: PropTypes.number,
   lightingModel: PropTypes.oneOf(values(ARKitManager.LightingModel)),
+  shaders,
 });
