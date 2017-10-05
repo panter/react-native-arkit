@@ -10,22 +10,34 @@ const ARKitManager = NativeModules.ARKitManager;
 const ARSprite = withAnimationFrame(
   class extends Component {
     identifier = null;
+    mounted = false;
 
     constructor(props) {
       super(props);
 
       this.state = {
-        visible: true,
+        visible: false,
         pos2D: new Animated.ValueXY(), // inits to zero
       };
     }
     onAnimationFrame() {
       ARKitManager.projectPoint(
-        this.props.pos,
+        this.props.position,
       ).then(({ x, y, z, distance }) => {
-        this.setState({ visible: z < 1 });
-        this.state.pos2D.setValue({ x, y });
+        if (this.mounted) {
+          const visible = z < 1;
+          if (visible !== this.state.visible) this.setState({ visible });
+
+          this.state.pos2D.setValue({ x, y });
+        }
       });
+    }
+    componentDidMount() {
+      this.mounted = true;
+    }
+
+    componentWillUnmount() {
+      this.mounted = false;
     }
 
     render() {
